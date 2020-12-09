@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
+  constructor(private adminService: AdminService) { }
 
-  ngOnInit(): void {
+  logout(){
+    this.adminService.logout();
   }
 
 }
