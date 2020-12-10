@@ -6,7 +6,7 @@ import { environment} from '../../environments/environment';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
 
-const base_Url = environment.base_Url;
+const url_base = environment.url_base;
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class AdminService {
               private router: Router) { }
 
   login(formData: LoginForm) {
-    return this.http.post(`/api/login`, formData)
+    return this.http.post(`${url_base}/login`, formData)
                 .pipe(
                   tap( (resp: any) => {
                     localStorage.setItem('token2', resp.token );
@@ -27,7 +27,7 @@ export class AdminService {
 
   validarToken(){
     const token = localStorage.getItem('token2') || '';
-    return this.http.get(`/api/login/renew`, {
+    return this.http.get(`${url_base}/login/renew`, {
       headers: {
         'x-token': token
       }

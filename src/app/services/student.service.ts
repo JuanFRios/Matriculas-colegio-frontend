@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { LoadStudents } from '../interfaces/load-students.interface';
 
 import { Student } from '../models/student.model';
+import { map } from 'rxjs/operators';
 
 const url_base = environment.url_base;
 
@@ -16,10 +17,14 @@ export class StudentService {
   
   constructor(private http: HttpClient) { }
 
+  get token() {
+    return localStorage.getItem('token2') || '';
+  }
+
   get headers() {
     return {
       headers: {
-        'x-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDc0Nzg3ODQsImV4cCI6MTYwNzU2NTE4NH0._NPTC3Fc1ykPXTaLUlWw2uCvdCSHEE2bA7oZfk4gdu8'
+        'x-token': this.token
       }
     }
   }
@@ -36,12 +41,19 @@ export class StudentService {
 
   updateStudent(student: Student){
     const url = `${url_base}/students/${student._id}`;
-    console.log(student);
     return this.http.put(url, student, this.headers);
   }
   
   deleteStudent(_id: string){
     const url = `${url_base}/students/${_id}`;
     return this.http.delete(url, this.headers);
+  }
+
+  searchStudent(term: string = '') {
+    const url = `${url_base}/todo/collection/students/${term}`;
+    return this.http.get<any[]>(url, this.headers)
+            .pipe(
+              map((resp: any) => resp.results)
+            );
   }
 }

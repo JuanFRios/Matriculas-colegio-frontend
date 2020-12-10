@@ -38,7 +38,7 @@ export class StudentFormComponent implements OnInit {
     .subscribe(resp => {
       Swal.fire('Agregado', 'Estudiante agregado correctamente', 'success');
       this.dialogRef.close();
-    });
+    }, err => {console.log(err);});
   }
 
   cancelForm() {

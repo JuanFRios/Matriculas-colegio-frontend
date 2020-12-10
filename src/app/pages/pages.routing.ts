@@ -23,7 +23,7 @@ const routes: Routes = [
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes de cuenta' }},
             { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' }},
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' }},
-            { path: 'estudiantes', component: StudentsComponent, data: { titulo: 'Mantenimiento de Estudiantes' }}
+            { path: 'estudiantes', component: StudentsComponent, data: { titulo: 'Estudiantes' }}
         ]
     },
 ];

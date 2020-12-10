@@ -75,8 +75,18 @@ export class StudentsComponent implements OnInit {
   launchStudentForm() {
     const dialogRef = this.dialog.open(StudentFormComponent, {width: '700px'});
     dialogRef.afterClosed().subscribe(() => {
-      this.loadStudents();
-    })
+
+    });
+  }
+
+  searchStudent(term: string) {
+    if (term.length === 0) {
+      return this.loadStudents();
+    }
+    this.studentService.searchStudent(term)
+        .subscribe(result => {
+          this.students = result;
+        })
   }
 
   changePage(value: number) {

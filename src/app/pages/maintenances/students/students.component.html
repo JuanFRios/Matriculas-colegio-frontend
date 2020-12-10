@@ -5,7 +5,9 @@
                 
                 <input type="text"
                         class="form-control"
-                        placeholder="Buscar estudiante"/>
+                        placeholder="Buscar estudiante"
+                        #txtTerm
+                        (keyup)="searchStudent(txtTerm.value)"/>
 
             </div>
         </div>
@@ -55,14 +57,14 @@
                             <tr>
                                 <th>Identificación</th>
                                 <th>Nombre</th>
-                                <th>Edad</th>
+                                <th class="w56">Edad</th>
                                 <th>Dirección</th>
                                 <th>Correo</th>
                                 <th>Teléfono</th>
                                 <th>Acudiente</th>
                                 <th>Teléfono acudiente</th>
-                                <th>Curso aprovado</th>
-                                <th class="text-nowrap">Acciones</th>
+                                <th class="w83">Curso aprobado</th>
+                                <th class="text-nowrap w83">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -171,10 +173,11 @@
                         </tbody>
                     </table>
                 </div>
-
-                <button (click)="changePage(-5)" [disabled]="since==0" class="btn btn-secondary">Anterior</button>
-                &nbsp;
-                <button (click)="changePage(5)" [disabled]="(totalStudents - since) <= 5" class="btn btn-secondary">Siguiente</button>
+                <div *ngIf="txtTerm.value.length === 0">
+                    <button (click)="changePage(-5)" [disabled]="since==0" class="btn btn-secondary">Anterior</button>
+                    &nbsp;
+                    <button (click)="changePage(5)" [disabled]="(totalStudents - since) <= 5" class="btn btn-secondary">Siguiente</button>
+                </div>
 
             </div>
         </div>
