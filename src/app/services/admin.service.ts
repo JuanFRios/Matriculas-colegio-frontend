@@ -33,6 +33,7 @@ export class AdminService {
       }
     }).pipe(
       tap((resp: any) => {
+        console.log(resp)
         localStorage.setItem('token2', resp.token);
       }),
       map( resp => true),

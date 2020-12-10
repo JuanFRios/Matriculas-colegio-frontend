@@ -14,8 +14,8 @@ export class LoginComponent{
   public formSubmitted = false;
 
   public loginForm: FormGroup = this.fb.group({
-    username: ['juanes5', Validators.required],
-    password: ['1234', Validators.required]
+    username: ['', Validators.required],
+    password: ['', Validators.required]
   });
 
   constructor( private router: Router,
