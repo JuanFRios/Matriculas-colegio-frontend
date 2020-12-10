@@ -1,0 +1,182 @@
+<div class="row animated fadeIn fast">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                
+                <input type="text"
+                        class="form-control"
+                        placeholder="Buscar estudiante"/>
+
+            </div>
+        </div>
+    </div>
+</div> 
+
+<div class="row animated fadeIn fast"
+    *ngIf="loading">
+    <div class="col-12">
+        
+        <div class="alert alert-info text-center">
+          <h4 class="alert-heading">Cargando</h4>
+          <i class="fa fa-spin fa-refresh fa-2x"></i>
+          <p class="mb-0">Por favor espere</p>
+        </div>
+
+    </div>
+</div> 
+
+
+<div class="row"
+    *ngIf="!loading">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-8">
+                        <h4 class="card-title">Estudiantes ({{totalStudents}})</h4>
+                        <h6 class="card-subtitle">
+                            Estudiantes registrados
+                            
+                        </h6>
+                    </div>
+                    <div class="col">
+                        <div class="text-right">
+                            <button class="btn btn-primary"
+                                    (click)="launchStudentForm()">
+                                <i class="fa fa-id-card-o"></i>
+                                Agregar estudiante
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Identificación</th>
+                                <th>Nombre</th>
+                                <th>Edad</th>
+                                <th>Dirección</th>
+                                <th>Correo</th>
+                                <th>Teléfono</th>
+                                <th>Acudiente</th>
+                                <th>Teléfono acudiente</th>
+                                <th>Curso aprovado</th>
+                                <th class="text-nowrap">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let student of students">
+                                <ng-container *ngIf="!editing || student !== editingStudent; else elseTemplate">
+                                    <td>{{student.identityDocument}}</td>
+                                    <td>{{student.fullName}}</td>
+                                    <td>{{student.age}}</td>
+                                    <td>{{student.address}}</td>
+                                    <td>{{student.email}}</td>
+                                    <td>{{student.contactNumber}}</td>
+                                    <td>{{student.guardianName}}</td>
+                                    <td>{{student.guardianContactNumber}}</td>
+                                    <td>{{student.lastApprovedGrade}}</td>
+                                    <td class="text-nowrap text-center">
+                                        <a (click)="editStudent(student)"
+                                           data-toggle="tooltip"
+                                           class="cursor"
+                                           data-original-title="Editar">
+                                           <i class="fa fa-pencil text-inverse m-r-10"></i>
+                                        </a>
+                                        <a (click)="deleteStudent(student)"
+                                           data-toggle="tooltip"
+                                           class="cursor"
+                                           data-original-title="Borrar">
+                                           <i class="fa fa-close text-danger"></i>
+                                        </a>
+                                    </td>
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <td>
+                                        <input type="text"
+                                                class="form-control"
+                                                placeholder="Id"
+                                                [(ngModel)]="student.identityDocument"
+                                                />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                                class="form-control"
+                                                placeholder="Nombre"
+                                                [(ngModel)]="student.fullName"
+                                                />
+                                    </td>
+                                    <td>
+                                        <input type="number"
+                                                class="form-control"
+                                                placeholder="Edad"
+                                                [(ngModel)]="student.age"
+                                                />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                                class="form-control"
+                                                placeholder="Dirección"
+                                                [(ngModel)]="student.address"
+                                                />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                                class="form-control"
+                                                placeholder="Correo"
+                                                [(ngModel)]="student.email"
+                                                />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                                class="form-control"
+                                                placeholder="Teléfono"
+                                                [(ngModel)]="student.contactNumber"
+                                                />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                                class="form-control"
+                                                placeholder="Acudiente"
+                                                [(ngModel)]="student.guardianName"
+                                                />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                                class="form-control"
+                                                placeholder="Tel acud"
+                                                [(ngModel)]="student.guardianContactNumber"
+                                                />
+                                    </td>
+                                    <td>
+                                        <input type="number"
+                                                class="form-control"
+                                                placeholder="Grado"
+                                                [(ngModel)]="student.lastApprovedGrade"
+                                                />
+                                    </td>
+                                    <td class="text-nowrap text-center">
+                                        <a (click)="updateStudent(student)"
+                                           data-toggle="tooltip"
+                                           class="cursor"
+                                           data-original-title="Editar">
+                                           <i class="fa fa-floppy-o text-inverse m-r-10"></i>
+                                        </a>
+                                    </td>
+                                </ng-template>
+                                
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <button (click)="changePage(-5)" [disabled]="since==0" class="btn btn-secondary">Anterior</button>
+                &nbsp;
+                <button (click)="changePage(5)" [disabled]="(totalStudents - since) <= 5" class="btn btn-secondary">Siguiente</button>
+
+            </div>
+        </div>
+    </div>
+</div>
