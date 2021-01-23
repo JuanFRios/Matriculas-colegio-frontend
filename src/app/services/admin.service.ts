@@ -21,6 +21,7 @@ export class AdminService {
                 .pipe(
                   tap( (resp: any) => {
                     localStorage.setItem('token2', resp.token );
+                    localStorage.setItem('tipoUsuario', resp.tipoUsuario );
                   })
                 );
   }
@@ -35,6 +36,7 @@ export class AdminService {
       tap((resp: any) => {
         console.log(resp)
         localStorage.setItem('token2', resp.token);
+        localStorage.setItem('user', JSON.stringify(resp.user));
       }),
       map( resp => true),
       catchError( error => of(false))
@@ -43,6 +45,8 @@ export class AdminService {
 
   logout(){
     localStorage.removeItem('token2');
+    localStorage.removeItem('tipoUsuario');
+    localStorage.removeItem('user');
     this.router.navigateByUrl('/login');
   }
 }

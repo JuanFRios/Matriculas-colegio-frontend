@@ -11,12 +11,17 @@ import { SidebarService } from '../../services/sidebar.service';
 export class SidebarComponent implements OnInit {
 
   menuItems: any[];
-
+  usuario;
   constructor( private sidebarService: SidebarService,
                 private adminService: AdminService ) {
-    this.menuItems = sidebarService.menu;
+    this.verificar();
+    this.usuario = JSON.parse(localStorage.getItem('user'));
+    //this.menuItems = sidebarService.menu;
   }
 
+  async verificar(){
+    this.menuItems = await this.sidebarService.verificarMenu();
+  }
   ngOnInit(): void {
   }
 

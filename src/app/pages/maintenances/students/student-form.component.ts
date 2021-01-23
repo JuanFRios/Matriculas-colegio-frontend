@@ -4,6 +4,8 @@ import { StudentService } from 'src/app/services/student.service';
 import Swal from 'sweetalert2';
 import { MatDialogRef } from '@angular/material/dialog';
 
+
+
 @Component({
   selector: 'app-student-form',
   templateUrl: './student-form.component.html',
@@ -11,14 +13,15 @@ import { MatDialogRef } from '@angular/material/dialog';
   ]
 })
 export class StudentFormComponent implements OnInit {
-
+  
   public studentForm: FormGroup;
-
+  public grados: String[];
   constructor(private fb: FormBuilder,
               private studentService: StudentService,
               public dialogRef: MatDialogRef<StudentFormComponent>) { }
 
   ngOnInit(): void {
+    this.grados= ["Primero", "Segundo", "Tercero", "Cuarto", "Quinto", "Sexto", "Septimo", "Octavo", "Noveno", "Decimo", "Once"];
     this.studentForm = this.fb.group({
       identityDocument: ['', Validators.required],
       fullName: ['', Validators.required],

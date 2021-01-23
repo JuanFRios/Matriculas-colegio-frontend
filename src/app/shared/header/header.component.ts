@@ -9,7 +9,16 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class HeaderComponent {
 
-  constructor(private adminService: AdminService) { }
+  esEstudiante: boolean;
+  esAdmin: boolean;
+  usuario;
+
+  constructor(private adminService: AdminService) { 
+    let tipoUsuario= localStorage.getItem('tipoUsuario');
+    this.esEstudiante = (tipoUsuario === "Student")? true : false;
+    this.esAdmin = (tipoUsuario === "Admin")? true : false;
+    this.usuario = JSON.parse(localStorage.getItem('user'));
+  }
 
   logout(){
     this.adminService.logout();
