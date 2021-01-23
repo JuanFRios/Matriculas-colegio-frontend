@@ -10,6 +10,11 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { StudentsComponent } from './maintenances/students/students.component';
 import { AuthGuard} from '../guard/auth.guard';
+import { CertificadosMatriculasComponent } from './certificados-matriculas/certificados-matriculas.component';
+import { GestionGradosComponent } from './gestion-grados/gestion-grados.component';
+import { MatriculaEstudianteComponent } from './matricula-estudiante/matricula-estudiante.component';
+import { SeguimientoComponent } from './seguimiento/seguimiento.component';
+import { PerfilEstudianteComponent } from './perfil-estudiante/perfil-estudiante.component';
 
 const routes: Routes = [
     { 
@@ -23,7 +28,12 @@ const routes: Routes = [
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes de cuenta' }},
             { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' }},
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' }},
-            { path: 'estudiantes', component: StudentsComponent, data: { titulo: 'Estudiantes' }}
+            { path: 'estudiantes', component: StudentsComponent, data: { titulo: 'Estudiantes' }},
+            { path: 'certificados', component: CertificadosMatriculasComponent, data: { titulo: 'Certificados de Matriculas' }},
+            { path: 'gestionGrados', component: GestionGradosComponent, data: { titulo: 'Gestion de grados' }},
+            { path: 'matricula', component: MatriculaEstudianteComponent, data: { titulo: 'Matricula' }},
+            { path: 'seguimiento', component: SeguimientoComponent, data: { titulo: 'Seguimiento' }},
+            { path: 'perfil', component: PerfilEstudianteComponent, data: { titulo: 'Perfil' }}
         ]
     },
 ];

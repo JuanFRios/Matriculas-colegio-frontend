@@ -91,11 +91,17 @@
                                 <label for="exampleInputuname">Último grado aprobado</label>
                                 <div class="input-group">
                                     <div class="input-group-addon"><i class="ti-agenda"></i></div>
-                                    <input type="number"
+                                    <select class="form-control" name="lastApprovedGrade" formControlName="lastApprovedGrade">
+                                        <option selected value="Ninguno">Ninguno</option>
+                                        <option *ngFor="let grado of grados" [value]="grado">{{grado}}</option>
+                                        
+                                    </select>
+
+                                    <!--<input type="number"
                                            formControlName="lastApprovedGrade"
                                            class="form-control"
                                            id="exampleInputuname"
-                                           placeholder="Grado">
+                                           placeholder="Grado"> -->
                                 </div>
                             </div>
                         </div>

@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -17,6 +19,11 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { StudentsComponent } from './maintenances/students/students.component';
 import { StudentFormComponent } from './maintenances/students/student-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatriculaEstudianteComponent } from './matricula-estudiante/matricula-estudiante.component';
+import { CertificadosMatriculasComponent } from './certificados-matriculas/certificados-matriculas.component';
+import { SeguimientoComponent } from './seguimiento/seguimiento.component';
+import { GestionGradosComponent } from './gestion-grados/gestion-grados.component';
+import { PerfilEstudianteComponent } from './perfil-estudiante/perfil-estudiante.component';
 
 
 
@@ -31,7 +38,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     PromesasComponent,
     RxjsComponent,
     StudentsComponent,
-    StudentFormComponent
+    StudentFormComponent,
+    MatriculaEstudianteComponent,
+    CertificadosMatriculasComponent,
+    SeguimientoComponent,
+    GestionGradosComponent,
+    PerfilEstudianteComponent
   ],
   exports: [
     DashboardComponent,
@@ -47,7 +59,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     RouterModule,
     ComponentsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatGridListModule,
+    MatCardModule
   ]
 })
 export class PagesModule { }
