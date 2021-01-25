@@ -1,6 +1,6 @@
 <mat-grid-list cols="6" rowHeight="4:6">
-    <mat-grid-tile *ngFor="let degree of degrees ">
-        <app-card [degree]="degree.degree"
-                  [image]="'/assets/images/logo.png'"></app-card>
+    <mat-grid-tile *ngFor="let degreeObj of degreesCont ">
+        <app-card [degree]="degreeObj.degree.degree"
+                  [image]="degreeObj.imgRoute"></app-card>
     </mat-grid-tile>
 </mat-grid-list>

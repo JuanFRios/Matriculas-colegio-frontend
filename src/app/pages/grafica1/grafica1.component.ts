@@ -12,8 +12,7 @@ import Swal from 'sweetalert2';
 export class Grafica1Component {
 
   public labels1: string[] = ['Mañana', 'Tarde'];
-  public data1 = [
-  ];
+  public data1 = [];
 
   constructor(public enrollmentService: EnrollmentService) {
     Swal.fire({
@@ -33,14 +32,13 @@ export class Grafica1Component {
         }else{
           tarde++;
         }
-      })
-      console.log(mañana, tarde)
-      this.data1.push([mañana, tarde]);
+      });
+      this.data1 = [
+        [mañana, tarde]
+      ];
+      console.log(this.data1)
       Swal.close();
-
     });
-
-
   }
 
 }
