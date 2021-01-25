@@ -1,0 +1,67 @@
+<div *ngIf="data.enrollment===undefined">
+    <h2>Proceso de Matrícula</h2>
+    <hr>
+    <br>
+
+    <form [formGroup]="matriculaFormGroup">
+
+
+        <div class="row">
+            <label style="padding-left: 15px;"><b>Estudiante: </b> {{data.student.fullName}}</label>
+        </div>
+        <div class="row">
+            <label style="padding-left: 15px;"><b>Grado: </b> {{data.degree.degree}}</label>
+        </div>
+        <div class="row">
+            <label style="padding-left: 15px;"><b> Materias: </b> {{data.degree.subjects}}</label>
+        </div>
+
+        <div class="row">
+            <div *ngIf="data.groups.length>0">
+                <label style="padding-left: 15px;"><b>Grupo: </b></label>
+                <div style="padding-left: 15px;">
+                    <select class="form-control" formControlName="grupo">
+
+                        <option *ngFor="let grupo of data.groups" [value]="grupo._id">
+                            Director: {{grupo.mainTeacher}}, Jornada: {{grupo.dayShift}}, Cupos disponibles:
+                            {{grupo.quota}}
+                        </option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div *ngIf="data.groups.length==0">
+                <p style="text-align: center;">**No hay grupos disponibles para este grado, cree un nuevo grupo**</p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <button (click)="onNoClick()" class="btn" style="background-color: gray; color: white;">
+                <i class="fa fa-times-circle"></i>
+                Cancelar
+            </button>
+            <button *ngIf="matriculaFormGroup.valid" type="button" (click)="enviarMatricula()" class="btn btn-success waves-effect waves-light">
+                <i class="fa fa-save"></i>
+                Guardar
+            </button>
+        </div>
+
+
+    </form>
+</div>
+
+<div *ngIf="data.enrollment != undefined">
+    <h2>Constancia de Matricula</h2>
+    <hr>
+    <p>Actualmente {{data.student.fullName}} se encuentra matriculado en el grado {{data.degree.degree}} en la jornada
+        de la {{data.group.dayShift}} y su profesor de grupo es {{data.group.mainTeacher}} </p>
+    <button (click)="onNoClick()" class="btn" style="background-color: gray; color: white;">
+        <i class="fa fa-save"></i>
+        Cancelar
+    </button>
+    <button type="button" (click)="eliminarMatricula()" class="btn btn-danger waves-effect waves-light">
+        <i class="fa fa-times-circle"></i>
+        Eliminar
+    </button>
+</div>

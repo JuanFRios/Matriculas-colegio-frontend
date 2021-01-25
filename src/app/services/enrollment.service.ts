@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Enrollment, NewEnrollment } from '../models/enrollment.model';
+import { LoadEnrollments } from '../interfaces/load-enrollments.interface';
 
 const url_base = environment.url_base;
 
@@ -34,12 +35,12 @@ export class EnrollmentService {
 
   getEnrollmentsPerStudent(idStudent: String) {
     const url = `${url_base}/enrollments/studentEnrollments/${idStudent}`;
-    return this.http.get<Enrollment[]>(url, this.headers);
+    return this.http.get<LoadEnrollments>(url, this.headers);
   }
 
   getEnrollmentsPerDayShift(dayShift: String) {
     const url = `${url_base}/enrollments/perDayShift/${dayShift}`;
-    return this.http.get<Enrollment[]>(url, this.headers);
+    return this.http.get<LoadEnrollments>(url, this.headers);
   }
 
   deleteEnrollment(_id: string){

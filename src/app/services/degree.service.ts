@@ -28,6 +28,49 @@ export class DegreeService {
       }
     }
 
+    siguienteGrado(grado: String){
+      let siguiente: String;
+      switch(grado){
+        case "Ninguno":
+          siguiente= "Primero"
+          break;
+        case "Primero":
+          siguiente= "Segundo";
+          break;
+        case "Segundo":
+          siguiente= "Tercero";
+          break;
+        case "Tercero":
+          siguiente= "Cuarto";
+          break;
+        case "Cuarto":
+          siguiente= "Quinto";
+          break;
+        case "Quinto":
+          siguiente= "Sexto";
+          break;
+        case "Sexto":
+          siguiente= "Septimo";
+          break;
+        case "Septimo":
+          siguiente= "Octavo";
+          break;
+        case "Octavo":
+          siguiente= "Noveno";
+          break;
+        case "Noveno":
+          siguiente= "Decimo"
+          break;
+        case "Decimo":
+          siguiente= "Once"
+          break;
+        
+      }
+  
+      return siguiente;
+  
+    }
+
     getDegrees() {
       const url = `${url_base}/degrees`;
       return this.http.get<LoadDegrees>(url, this.headers);
@@ -35,7 +78,7 @@ export class DegreeService {
 
     getDegreePerName(name: String) {
       const url = `${url_base}/degrees/${name}`;
-      return this.http.get<Degree>(url, this.headers);
+      return this.http.get<LoadDegrees>(url, this.headers);
     }
 
     //Aca hay que tener cuidado con lo que recibe el servicio, hasta donde se no recibe _id, pero si se necesita

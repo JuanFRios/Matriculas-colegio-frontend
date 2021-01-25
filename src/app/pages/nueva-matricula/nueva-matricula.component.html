@@ -1,0 +1,43 @@
+<h2>Proceso de Matrícula</h2>
+<hr>
+<br>
+
+<form [formGroup]="matriculaFormGroup">
+
+    
+    <div class="row">
+        <label style="padding-left: 15px;"><b>Estudiante: </b>  {{data.student.fullName}}</label>
+    </div>
+    <div class="row">
+        <label style="padding-left: 15px;"><b>Grado: </b>  {{data.degree.degree}}</label>
+    </div>
+    <div class="row">
+        <label style="padding-left: 15px;"><b> Materias: </b> {{data.degree.subjects}}</label>
+    </div>
+
+    <div class="row">
+        <div *ngIf="data.groups.length>0">
+            <label style="padding-left: 15px;"><b>Grupo: </b></label>
+            <div style="padding-left: 15px;">
+                <select class="form-control"  formControlName="grupo">
+                    <option *ngFor="let grupo of data.groups" [value]="grupo._id">
+                        Director: {{grupo.mainTeacher}}, Jornada: {{grupo.dayShift}}, Cupos disponibles: {{grupo.quota}}
+                    </option>
+                </select>
+            </div>
+            
+        </div>
+
+        <div *ngIf="data.groups.length==0" >
+            <p style="text-align: center;">**No hay grupos disponibles para este grado, comuníquese con el administrador**</p>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        
+        <button class="cancelar" (click)="onNoClick()">Cancelar</button>
+        <button (click)="enviarMatricula()" *ngIf="matriculaFormGroup.valid">Guardar</button>
+    </div>
+
+
+</form>

@@ -5,6 +5,7 @@ import { environment} from '../../environments/environment';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Group, NewGroup } from '../models/group.model';
 import { Degree } from '../models/degree.model';
+import {  FindGroup, LoadGroups, Quota } from '../interfaces/load-groups.interface';
 
 const url_base = environment.url_base;
 
@@ -36,17 +37,17 @@ export class GruopService {
 
     getGroupPerId(idGroup: String) {
       const url = `${url_base}/groups/${idGroup}`;
-      return this.http.get<Group>(url, this.headers);
+      return this.http.get<FindGroup>(url, this.headers);
     }
 
     getGroupsPerDegree(idDegree: String) {
       const url = `${url_base}/groups/degree/${idDegree}`;
-      return this.http.get<Group[]>(url, this.headers);
+      return this.http.get<LoadGroups>(url, this.headers);
     }
 
     getAvailableQuota(idGroup: String) {
       const url = `${url_base}/enrollments/${idGroup}`;
-      return this.http.get<Number>(url, this.headers);
+      return this.http.get<Quota>(url, this.headers);
     }
 
     //Hay que tener cuidado con lo que se envia porque el body no recibe ni el id ni el degree

@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+
 // Modulos
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -24,6 +27,8 @@ import { CertificadosMatriculasComponent } from './certificados-matriculas/certi
 import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 import { GestionGradosComponent } from './gestion-grados/gestion-grados.component';
 import { PerfilEstudianteComponent } from './perfil-estudiante/perfil-estudiante.component';
+import { NuevaMatriculaComponent } from './nueva-matricula/nueva-matricula.component';
+import { MatriculaAdminComponent } from './matricula-admin/matricula-admin.component';
 
 
 
@@ -43,7 +48,9 @@ import { PerfilEstudianteComponent } from './perfil-estudiante/perfil-estudiante
     CertificadosMatriculasComponent,
     SeguimientoComponent,
     GestionGradosComponent,
-    PerfilEstudianteComponent
+    PerfilEstudianteComponent,
+    NuevaMatriculaComponent,
+    MatriculaAdminComponent
   ],
   exports: [
     DashboardComponent,
@@ -61,7 +68,9 @@ import { PerfilEstudianteComponent } from './perfil-estudiante/perfil-estudiante
     ReactiveFormsModule,
     MatDialogModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatIconModule
   ]
 })
 export class PagesModule { }
