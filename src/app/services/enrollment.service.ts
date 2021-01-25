@@ -38,8 +38,8 @@ export class EnrollmentService {
     return this.http.get<LoadEnrollment>(url, this.headers);
   }
 
-  getEnrollmentsPerDayShift(dayShift: string) {
-    const url = `${url_base}/enrollments/perDayShift/${dayShift}`;
+  getEnrollmentsPerDayShift() {
+    const url = `${url_base}/enrollments/perDayShift`;
     return this.http.get<LoadEnrollment>(url, this.headers);
   }
 

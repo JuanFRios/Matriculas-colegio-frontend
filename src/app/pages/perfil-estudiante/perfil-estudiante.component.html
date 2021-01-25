@@ -1,1 +1,69 @@
-<p>perfil-estudiante works!</p>
+<div class="container center">
+    <div class="card">
+
+
+        <h2>Perfil estudiante</h2>
+        <hr />
+        <form class="form p-t-20">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="exampleInputuname"><b>Documento de identidad:</b></label>
+                        <br>
+                        <label> {{student.identityDocument}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputuname"><b>Correo electrónico:</b></label>
+                        <br>
+                        <label> {{student.email}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputuname"><b>Edad:</b> </label>
+                        <br>
+                        <label> {{student.age}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputuname"><b>Nombre del acudiente:</b></label>
+                        <br>
+                        <label> {{student.guardianName}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputuname"><b>Dirección:</b></label>
+                        <br>
+                        <label> {{student.address}}</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="exampleInputuname"><b>Nombre del estudiante:</b></label>
+                        <br>
+                        <label> {{student.fullName}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputuname"><b>Teléfono:</b> </label>
+                        <br>
+                        <label> {{student.contactNumber}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputuname"><b>Último grado aprobado:</b></label>
+                        <br>
+                        <label> {{student.lastApprovedGrade}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputuname"><b>Teléfono del acudiente:</b></label>
+                        <br>
+                        <label> {{student.guardianContactNumber}}</label>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: end ;">
+                <button (click)="editarInformacion()" >Editar</button>
+            </div>
+           
+
+        </form>
+    </div>
+
+
+
+</div>

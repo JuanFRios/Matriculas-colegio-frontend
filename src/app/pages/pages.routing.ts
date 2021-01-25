@@ -17,6 +17,7 @@ import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 import { PerfilEstudianteComponent } from './perfil-estudiante/perfil-estudiante.component';
 import { NuevaMatriculaComponent } from './nueva-matricula/nueva-matricula.component';
 import { DegreesComponent } from './maintenances/degrees/degrees.component';
+import { EditarInformacionComponent } from './editar-informacion/editar-informacion.component';
 
 const routes: Routes = [
     { 
@@ -37,7 +38,8 @@ const routes: Routes = [
             { path: 'matricula', component: MatriculaEstudianteComponent, data: { titulo: 'Matricula' }},
             { path: 'seguimiento', component: SeguimientoComponent, data: { titulo: 'Seguimiento' }},
             { path: 'perfil', component: PerfilEstudianteComponent, data: { titulo: 'Perfil' }},
-            { path: 'nuevaMatricula', component: NuevaMatriculaComponent, data: { titulo: 'Nueva Matricula' }}
+            { path: 'nuevaMatricula', component: NuevaMatriculaComponent, data: { titulo: 'Nueva Matricula' }},
+            { path: 'editarInformacion', component: EditarInformacionComponent, data: { titulo: 'Editar Informacion' }}
         ]
     },
 ];
