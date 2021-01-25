@@ -27,6 +27,49 @@ export class DegreeService {
       }
     }
 
+    siguienteGrado(grado: string){
+      let siguiente: string;
+      switch(grado){
+        case "Ninguno":
+          siguiente= "Primero"
+          break;
+        case "Primero":
+          siguiente= "Segundo";
+          break;
+        case "Segundo":
+          siguiente= "Tercero";
+          break;
+        case "Tercero":
+          siguiente= "Cuarto";
+          break;
+        case "Cuarto":
+          siguiente= "Quinto";
+          break;
+        case "Quinto":
+          siguiente= "Sexto";
+          break;
+        case "Sexto":
+          siguiente= "Septimo";
+          break;
+        case "Septimo":
+          siguiente= "Octavo";
+          break;
+        case "Octavo":
+          siguiente= "Noveno";
+          break;
+        case "Noveno":
+          siguiente= "Decimo"
+          break;
+        case "Decimo":
+          siguiente= "Once"
+          break;
+        
+      }
+  
+      return siguiente;
+  
+    }
+
     getDegrees() {
       const url = `${url_base}/degrees`;
       return this.http.get<LoadDegrees>(url, this.headers);

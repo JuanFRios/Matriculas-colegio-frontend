@@ -9,7 +9,7 @@ export class Student {
         public contactNumber: string,
         public guardianName: string,
         public guardianContactNumber: string,
-        public lastApprovedGrade: number,
+        public lastApprovedGrade: string,
         public password?: string,
         public img?: string
     ) { }

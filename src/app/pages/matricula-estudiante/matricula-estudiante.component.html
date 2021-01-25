@@ -1,1 +1,39 @@
-<p>matricula-estudiante works!</p>
+<div class="container center">
+  <div *ngIf="!yaMatriculado" class="card">
+    <h2>Bienvenido al sistema de Matriculas</h2>
+    <hr />
+    <p>Usted esta habilitado para matricularse en el presente año lectivo.</p>
+    <p>Recuerde que es de vital importancia que antes de iniciar el proceso de matricula, usted actualice toda su
+      información personal para evitar futuros inconvenientes.</p>
+    <p> Puede inicar el proceso de matricula cuando desee, pero debe tener en cuenta que una vez se matricule a un grupo
+      de los disponibles, no podra modificar o eliminar su matricula; para tales fines debera contactarse con el
+      administrador.</p>
+    <br>
+    <button (click)="openDialog()">Iniciar Proceso de Matricula >></button>
+  </div>
+
+  <div *ngIf="yaMatriculado" class="card">
+    <h2>Constancia de Matricula</h2>
+    <hr>
+    <p>Actualmente usted se encuentra matriculado en el grado {{nextDegree.degree}} en la jornada de la {{enroll.group.dayShift}} y su profesor de grupo es {{enroll.group.mainTeacher}} </p>
+    
+</div>
+</div>
+
+
+
+
+
+<!--
+<div *ngIf="yaMatriculado">
+    <p>Ya tiene una matricula asociada</p>
+    <h1>{{enroll.enrollmentYear}}, {{enroll.group}}</h1>
+</div>
+
+<div *ngIf="!yaMatriculado"  >
+    
+    
+
+</div>
+
+-->

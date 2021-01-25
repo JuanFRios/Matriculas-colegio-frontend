@@ -90,8 +90,12 @@
                                            data-toggle="tooltip"
                                            class="cursor"
                                            data-original-title="Borrar">
-                                           <i class="fa fa-close text-danger"></i>
+                                           <i class="fa fa-close text-danger"></i>                                           
                                         </a>
+                                        <a (click)="gestionMatricula(student)" class="cursor" data-toggle="tooltip" data-original-title="Matricula">                                            
+                                            <mat-icon>description</mat-icon>
+                                        </a>
+
                                     </td>
                                 </ng-container>
                                 <ng-template #elseTemplate>
