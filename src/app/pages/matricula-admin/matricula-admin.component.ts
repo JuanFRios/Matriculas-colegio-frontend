@@ -23,7 +23,6 @@ export class MatriculaAdminComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<MatriculaAdminComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { student: Student, enrollment: Enrollment, degree: Degree, groups: Group[], group: Group }, private formBuilder: FormBuilder, public gruopService: GroupService, public enrollmentService: EnrollmentService) {
     this.buildForm();
-    console.log(data.groups)
   }
 
   ngOnInit(): void {
