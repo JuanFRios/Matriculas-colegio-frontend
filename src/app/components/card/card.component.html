@@ -1,0 +1,8 @@
+<div class="card">
+    <img class="mt-4" src="{{ image }}" alt="{{ degree }}">
+    <div class="my-card-body">
+        <p>{{ degree }}</p>
+        <a [routerLink]="['/dashboard/grados', degree]"
+           class="stretched-link"></a>
+    </div>
+</div>

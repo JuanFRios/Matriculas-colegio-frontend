@@ -1,1 +1,71 @@
-<p>seguimiento works!</p>
+<ng-container *ngIf="currentlyEnrolled; else elseTemplate">
+
+    <div class="row animated fadeIn fast"
+        *ngIf="loadingSubjects">
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+            <h4 class="alert-heading">Cargando asignaturas</h4>
+            <i class="fa fa-spin fa-refresh fa-2x"></i>
+            <p class="mb-0">Por favor espere</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row"
+        *ngIf="!loadingSubjects">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="card-title">Seguimiento ({{ student.fullName }})</h4>
+                            <h6 class="card-subtitle">
+                                Asignaturas que cursa actualmente
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="table-responsive col-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Asignatura</th>
+                                    <th>Porcentaje evaluado</th>
+                                    <th>Nota acumulada</th>
+                                    <th>Nota definitiva</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let subject of subjects">
+                                    <td>{{subject}}</td>
+                                    <td>0%</td>
+                                    <td>0.0</td>
+                                    <td>Sin definir</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #elseTemplate>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="card-title">El estudiante {{ student.fullName }} no se encuentra matriculado actualmente.</h4>
+                            <h6 class="card-subtitle">
+                                Efectúe su proceso de matrícula para visualizar su seguimiento.
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+

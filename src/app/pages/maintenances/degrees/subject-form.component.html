@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Asignatura</h4>
+                <h6 class="card-subtitle">Agregar nueva asignatura</h6>
+                <form class="form p-t-20"
+                      [formGroup]="subjectForm"
+                      (submit)="updateDegree()">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="exampleInputuname">Asignatura</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="ti-agenda"></i></div>
+                                    <input type="text"
+                                           formControlName="subjects"
+                                           class="form-control"
+                                           id="exampleInputuname"
+                                           placeholder="Nombre de la asignatura">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit"
+                            class="btn btn-success waves-effect waves-light ml-4 mr-5">
+                        <i class="fa fa-save"></i>
+                        Guardar
+                    </button>
+                    <button type="button"
+                            (click)="cancelForm()"
+                            class="btn btn-danger waves-effect waves-light">
+                        <i class="fa fa-times-circle"></i>
+                        Cancelar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

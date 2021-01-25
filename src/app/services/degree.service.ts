@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
-import { catchError, map, tap } from 'rxjs/operators';
 import { LoadDegrees } from '../interfaces/load-degrees.interface';
 import { Degree } from '../models/degree.model';
 
@@ -33,14 +32,14 @@ export class DegreeService {
       return this.http.get<LoadDegrees>(url, this.headers);
     }
 
-    getDegreePerName(name: String) {
+    getDegreePerName(name: string) {
       const url = `${url_base}/degrees/${name}`;
-      return this.http.get<Degree>(url, this.headers);
+      return this.http.get<LoadDegrees>(url, this.headers);
     }
 
     //Aca hay que tener cuidado con lo que recibe el servicio, hasta donde se no recibe _id, pero si se necesita
     updateDegree(degree: Degree){
-      const url = `${url_base}/degrees//${degree._id}`;
+      const url = `${url_base}/degrees/${degree._id}`;
       return this.http.put(url, degree, this.headers);
     }
 }

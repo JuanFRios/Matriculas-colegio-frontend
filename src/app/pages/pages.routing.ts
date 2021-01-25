@@ -15,6 +15,7 @@ import { GestionGradosComponent } from './gestion-grados/gestion-grados.componen
 import { MatriculaEstudianteComponent } from './matricula-estudiante/matricula-estudiante.component';
 import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 import { PerfilEstudianteComponent } from './perfil-estudiante/perfil-estudiante.component';
+import { DegreesComponent } from './maintenances/degrees/degrees.component';
 
 const routes: Routes = [
     { 
@@ -31,6 +32,7 @@ const routes: Routes = [
             { path: 'estudiantes', component: StudentsComponent, data: { titulo: 'Estudiantes' }},
             { path: 'certificados', component: CertificadosMatriculasComponent, data: { titulo: 'Certificados de Matriculas' }},
             { path: 'gestionGrados', component: GestionGradosComponent, data: { titulo: 'Gestion de grados' }},
+            { path: 'grados/:degree', component: DegreesComponent, data: { titulo: 'Grados' }},
             { path: 'matricula', component: MatriculaEstudianteComponent, data: { titulo: 'Matricula' }},
             { path: 'seguimiento', component: SeguimientoComponent, data: { titulo: 'Seguimiento' }},
             { path: 'perfil', component: PerfilEstudianteComponent, data: { titulo: 'Perfil' }}

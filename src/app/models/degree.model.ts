@@ -1,5 +1,5 @@
 export class Degree{
-    public _id?: String;
-    public degree: String;
-    public subjects: String[];
+    public _id?: string;
+    public degree: string;
+    public subjects: string;
 }

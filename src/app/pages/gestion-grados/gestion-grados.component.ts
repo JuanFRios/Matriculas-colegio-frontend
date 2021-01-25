@@ -14,7 +14,7 @@ export class GestionGradosComponent implements OnInit {
 
   ngOnInit(): void {
     this.degreeService.getDegrees().subscribe(resp => {
-      this.degrees = resp.degrees
+      this.degrees = resp.degrees;
     });
   }
 

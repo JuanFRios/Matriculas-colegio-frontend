@@ -5,13 +5,14 @@ import { environment} from '../../environments/environment';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Group, NewGroup } from '../models/group.model';
 import { Degree } from '../models/degree.model';
+import { LoadGroups } from '../interfaces/load-groups.interface';
 
 const url_base = environment.url_base;
 
 @Injectable({
   providedIn: 'root'
 })
-export class GruopService {
+export class GroupService {
 
   constructor(private http: HttpClient,
     private router: Router) { }
@@ -34,19 +35,19 @@ export class GruopService {
       return this.http.post(url, group, this.headers);
     }
 
-    getGroupPerId(idGroup: String) {
+    getGroupPerId(idGroup: string) {
       const url = `${url_base}/groups/${idGroup}`;
       return this.http.get<Group>(url, this.headers);
     }
 
-    getGroupsPerDegree(idDegree: String) {
+    getGroupsPerDegree(idDegree: string) {
       const url = `${url_base}/groups/degree/${idDegree}`;
-      return this.http.get<Group[]>(url, this.headers);
+      return this.http.get<LoadGroups>(url, this.headers);
     }
 
-    getAvailableQuota(idGroup: String) {
+    getAvailableQuota(idGroup: string) {
       const url = `${url_base}/enrollments/${idGroup}`;
-      return this.http.get<Number>(url, this.headers);
+      return this.http.get<number>(url, this.headers);
     }
 
     //Hay que tener cuidado con lo que se envia porque el body no recibe ni el id ni el degree

@@ -24,6 +24,9 @@ import { CertificadosMatriculasComponent } from './certificados-matriculas/certi
 import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 import { GestionGradosComponent } from './gestion-grados/gestion-grados.component';
 import { PerfilEstudianteComponent } from './perfil-estudiante/perfil-estudiante.component';
+import { DegreesComponent } from './maintenances/degrees/degrees.component';
+import { GroupFormComponent } from './maintenances/degrees/group-form.component';
+import { SubjectFormComponent } from './maintenances/degrees/subject-form.component';
 
 
 
@@ -43,7 +46,10 @@ import { PerfilEstudianteComponent } from './perfil-estudiante/perfil-estudiante
     CertificadosMatriculasComponent,
     SeguimientoComponent,
     GestionGradosComponent,
-    PerfilEstudianteComponent
+    PerfilEstudianteComponent,
+    DegreesComponent,
+    GroupFormComponent,
+    SubjectFormComponent
   ],
   exports: [
     DashboardComponent,
