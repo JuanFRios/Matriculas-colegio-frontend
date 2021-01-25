@@ -33,12 +33,12 @@ export class EnrollmentService {
     return this.http.post(url, enrollment, this.headers);
   }
 
-  getEnrollmentsPerStudent(idStudent: String) {
+  getEnrollmentsPerStudent(idStudent: string) {
     const url = `${url_base}/enrollments/studentEnrollments/${idStudent}`;
     return this.http.get<LoadEnrollment>(url, this.headers);
   }
 
-  getEnrollmentsPerDayShift(dayShift: String) {
+  getEnrollmentsPerDayShift(dayShift: string) {
     const url = `${url_base}/enrollments/perDayShift/${dayShift}`;
     return this.http.get<LoadEnrollment>(url, this.headers);
   }

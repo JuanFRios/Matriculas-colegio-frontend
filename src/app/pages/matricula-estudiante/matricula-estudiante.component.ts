@@ -3,7 +3,7 @@ import { Student } from '../../models/student.model';
 import { MatDialog } from '@angular/material/dialog';
 import { NuevaMatriculaComponent } from '../nueva-matricula/nueva-matricula.component';
 import { DegreeService } from '../../services/degree.service'
-import { GruopService } from '../../services/gruop.service'
+import { GroupService } from '../../services/group.service'
 import { EnrollmentService } from '../../services/enrollment.service'
 import { Degree } from 'src/app/models/degree.model';
 import { Group } from '../../models/group.model';
@@ -30,12 +30,12 @@ export class dataDialog {
 })
 export class MatriculaEstudianteComponent implements OnInit {
   student: Student;
-  siguienteGrado: String;
+  siguienteGrado: string;
   nextDegree: Degree;
   yaMatriculado: boolean;
   enroll : Enrollment;
   
-  constructor(private dialog: MatDialog, public degreeService: DegreeService, public gruopService: GruopService, public enrollmentService: EnrollmentService) {
+  constructor(private dialog: MatDialog, public degreeService: DegreeService, public gruopService: GroupService, public enrollmentService: EnrollmentService) {
     this.student = JSON.parse(localStorage.getItem('user'));
     
     this.verificarMatriculaAsociada();

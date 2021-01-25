@@ -12,7 +12,7 @@ const url_base = environment.url_base;
 @Injectable({
   providedIn: 'root'
 })
-export class GruopService {
+export class GroupService {
 
   constructor(private http: HttpClient,
     private router: Router) { }
@@ -35,17 +35,17 @@ export class GruopService {
       return this.http.post(url, group, this.headers);
     }
 
-    getGroupPerId(idGroup: String) {
+    getGroupPerId(idGroup: string) {
       const url = `${url_base}/groups/${idGroup}`;
       return this.http.get<FindGroup>(url, this.headers);
     }
 
-    getGroupsPerDegree(idDegree: String) {
+    getGroupsPerDegree(idDegree: string) {
       const url = `${url_base}/groups/degree/${idDegree}`;
       return this.http.get<LoadGroups>(url, this.headers);
     }
 
-    getAvailableQuota(idGroup: String) {
+    getAvailableQuota(idGroup: string) {
       const url = `${url_base}/enrollments/${idGroup}`;
       return this.http.get<Quota>(url, this.headers);
     }

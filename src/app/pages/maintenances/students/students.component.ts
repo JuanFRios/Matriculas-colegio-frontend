@@ -8,7 +8,7 @@ import { EnrollmentService } from 'src/app/services/enrollment.service';
 import { Enrollment } from 'src/app/models/enrollment.model';
 import { MatriculaAdminComponent } from '../../matricula-admin/matricula-admin.component';
 import { DegreeService } from 'src/app/services/degree.service';
-import { GruopService } from 'src/app/services/gruop.service';
+import { GroupService } from 'src/app/services/group.service';
 import { Degree } from 'src/app/models/degree.model';
 import { Group } from 'src/app/models/group.model';
 
@@ -44,7 +44,7 @@ export class StudentsComponent implements OnInit {
   public nextDegree: Degree = new Degree;
 
   constructor(private studentService: StudentService,
-    private dialog: MatDialog, public degreeService: DegreeService, public gruopService: GruopService, public enrollmentService: EnrollmentService) { }
+    private dialog: MatDialog, public degreeService: DegreeService, public gruopService: GroupService, public enrollmentService: EnrollmentService) { }
 
 
   ngOnInit(): void {
@@ -98,7 +98,7 @@ export class StudentsComponent implements OnInit {
   launchStudentForm() {
     const dialogRef = this.dialog.open(StudentFormComponent, { width: '700px' });
     dialogRef.afterClosed().subscribe(() => {
-
+      this.loadStudents();
     });
   }
 

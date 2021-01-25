@@ -1,5 +1,5 @@
-import { Enrollment } from '../models/enrollment.model';
+import { Enrollment } from "../models/enrollment.model";
 
-export interface LoadEnrollment{
+export interface LoadEnrollment {
     enrollments: Enrollment[];
 }

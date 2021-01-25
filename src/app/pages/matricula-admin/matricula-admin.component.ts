@@ -8,7 +8,7 @@ import { DegreeService } from '../../services/degree.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Group } from 'src/app/models/group.model';
 import { Degree } from 'src/app/models/degree.model';
-import { GruopService } from 'src/app/services/gruop.service';
+import { GroupService} from 'src/app/services/group.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -21,7 +21,7 @@ export class MatriculaAdminComponent implements OnInit {
   matriculaFormGroup: FormGroup;
 
   constructor(public dialogRef: MatDialogRef<MatriculaAdminComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { student: Student, enrollment: Enrollment, degree: Degree, groups: Group[], group: Group }, private formBuilder: FormBuilder, public gruopService: GruopService, public enrollmentService: EnrollmentService) {
+    @Inject(MAT_DIALOG_DATA) public data: { student: Student, enrollment: Enrollment, degree: Degree, groups: Group[], group: Group }, private formBuilder: FormBuilder, public gruopService: GroupService, public enrollmentService: EnrollmentService) {
     this.buildForm();
     console.log(data.groups)
   }

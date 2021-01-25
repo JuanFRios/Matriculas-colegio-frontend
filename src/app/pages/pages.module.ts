@@ -29,6 +29,9 @@ import { GestionGradosComponent } from './gestion-grados/gestion-grados.componen
 import { PerfilEstudianteComponent } from './perfil-estudiante/perfil-estudiante.component';
 import { NuevaMatriculaComponent } from './nueva-matricula/nueva-matricula.component';
 import { MatriculaAdminComponent } from './matricula-admin/matricula-admin.component';
+import { DegreesComponent } from './maintenances/degrees/degrees.component';
+import { GroupFormComponent } from './maintenances/degrees/group-form.component';
+import { SubjectFormComponent } from './maintenances/degrees/subject-form.component';
 
 
 
@@ -50,7 +53,10 @@ import { MatriculaAdminComponent } from './matricula-admin/matricula-admin.compo
     GestionGradosComponent,
     PerfilEstudianteComponent,
     NuevaMatriculaComponent,
-    MatriculaAdminComponent
+    MatriculaAdminComponent,
+    DegreesComponent,
+    GroupFormComponent,
+    SubjectFormComponent
   ],
   exports: [
     DashboardComponent,

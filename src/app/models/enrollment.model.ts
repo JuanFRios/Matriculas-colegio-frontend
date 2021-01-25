@@ -1,5 +1,3 @@
-import { Group } from "./group.model";
-
 import { GroupMin } from '../models/group.model';
 
 export class Enrollment{

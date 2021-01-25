@@ -15,7 +15,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class StudentFormComponent implements OnInit {
   
   public studentForm: FormGroup;
-  public grados: String[];
+  public grados: string[];
   constructor(private fb: FormBuilder,
               private studentService: StudentService,
               public dialogRef: MatDialogRef<StudentFormComponent>) { }
@@ -33,7 +33,7 @@ export class StudentFormComponent implements OnInit {
       guardianContactNumber: ['', Validators.required],
       lastApprovedGrade: ['', Validators.required],
       password: ['', Validators.required]
-    })
+    });
   }
 
   createStudent() {

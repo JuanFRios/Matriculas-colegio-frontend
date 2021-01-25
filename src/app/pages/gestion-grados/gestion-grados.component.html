@@ -1,4 +1,6 @@
-<p>gestion-grados works!</p>
-<mat-grid-list cols="4" rowHeight="4:1">
-    <mat-grid-tile *ngFor="let degree of degrees "><button>{{degree.degree}}</button></mat-grid-tile>
+<mat-grid-list cols="6" rowHeight="4:6">
+    <mat-grid-tile *ngFor="let degree of degrees ">
+        <app-card [degree]="degree.degree"
+                  [image]="'/assets/images/logo.png'"></app-card>
+    </mat-grid-tile>
 </mat-grid-list>
