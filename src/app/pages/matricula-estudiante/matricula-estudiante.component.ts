@@ -48,7 +48,6 @@ export class MatriculaEstudianteComponent implements OnInit {
     this.enrollmentService.getEnrollmentsPerStudent(this.student._id).subscribe(({enrollments}) =>{
       let date = new Date();
       let año = date.getFullYear();
-      console.log(año)
       this.yaMatriculado=false;
       enrollments.forEach(m => {
         if(m.enrollmentYear === año.toString()){
@@ -82,7 +81,6 @@ export class MatriculaEstudianteComponent implements OnInit {
         let availableGroups: Group[]=[];
         groups.forEach(group =>{
           this.gruopService.getAvailableQuota(group._id).subscribe(({availableQuota}) => {
-            console.log(group._id)
             group.quota= availableQuota;
             if(group.quota >0){
               availableGroups.push(group);

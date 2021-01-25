@@ -1,4 +1,5 @@
 export class Student {
+
     constructor(
         public _id: string,
         public identityDocument: string,

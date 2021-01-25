@@ -34,7 +34,6 @@ export class AdminService {
       }
     }).pipe(
       tap((resp: any) => {
-        console.log(resp)
         localStorage.setItem('token2', resp.token);
         localStorage.setItem('user', JSON.stringify(resp.user));
       }),

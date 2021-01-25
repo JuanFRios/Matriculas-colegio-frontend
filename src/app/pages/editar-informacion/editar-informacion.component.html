@@ -1,0 +1,99 @@
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Estudiante</h4>
+                <h6 class="card-subtitle">Editar información estudiante</h6>
+                <form class="form p-t-20" [formGroup]="studentForm" (submit)="editarStudent()">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleInputuname">Nombre completo</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="ti-user"></i></div>
+                                    <input type="text" formControlName="fullName" class="form-control"
+                                        id="exampleInputuname" placeholder="Nombre del estudiante">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Correo electrónico</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="ti-email"></i></div>
+                                    <input type="email" formControlName="email" class="form-control"
+                                        id="exampleInputEmail1" placeholder="Correo electrónico">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd1">Documento de identidad</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="ti-id-badge"></i></div>
+                                    <input type="text" disabled=true formControlName="identityDocument" class="form-control" id="pwd1"
+                                        placeholder="Número de documento">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd2">Edad</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="ti-time"></i></div>
+                                    <input type="number" formControlName="age" class="form-control" id="pwd2"
+                                        placeholder="Edad">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleInputuname">Teléfono de contacto</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="ti-mobile"></i></div>
+                                    <input type="text" formControlName="contactNumber" class="form-control"
+                                        id="exampleInputuname" placeholder="Teléfono">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputuname">Nombre acudiente</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="ti-user"></i></div>
+                                    <input type="text" formControlName="guardianName" class="form-control"
+                                        id="exampleInputuname" placeholder="Nombre del acudiente">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputuname">Teléfono del acudiente</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="ti-mobile"></i></div>
+                                    <input type="text" formControlName="guardianContactNumber" class="form-control"
+                                        id="exampleInputuname" placeholder="Teléfono">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputuname">Último grado aprobado</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="ti-agenda"></i></div>
+                                    <input type="text" disabled=true formControlName="lastApprovedGrade"
+                                        class="form-control" id="exampleInputuname" placeholder="Ultimo Grado Aprobado">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputuname">Dirección</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-home"></i></div>
+                            <input type="text" formControlName="address" class="form-control" id="exampleInputuname"
+                                placeholder="Dirección">
+                        </div>
+                    </div>
+                    
+                    <button type="button" (click)="cancelForm()" style="background-color:  gray;" >
+                        
+                        Cancelar
+                    </button>
+                    <button *ngIf="studentForm.valid" type="submit" >
+                        
+                        Guardar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

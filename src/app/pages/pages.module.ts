@@ -32,6 +32,7 @@ import { MatriculaAdminComponent } from './matricula-admin/matricula-admin.compo
 import { DegreesComponent } from './maintenances/degrees/degrees.component';
 import { GroupFormComponent } from './maintenances/degrees/group-form.component';
 import { SubjectFormComponent } from './maintenances/degrees/subject-form.component';
+import { EditarInformacionComponent } from './editar-informacion/editar-informacion.component';
 
 
 
@@ -56,7 +57,8 @@ import { SubjectFormComponent } from './maintenances/degrees/subject-form.compon
     MatriculaAdminComponent,
     DegreesComponent,
     GroupFormComponent,
-    SubjectFormComponent
+    SubjectFormComponent,
+    EditarInformacionComponent
   ],
   exports: [
     DashboardComponent,

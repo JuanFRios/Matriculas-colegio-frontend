@@ -157,7 +157,6 @@ export class StudentsComponent implements OnInit {
           })
           if(enroll != undefined){
             this.gruopService.getGroupPerId(enroll.group._id).subscribe(({group}) => {
-              console.log(group)
               availableGroups.forEach(a =>{
                 if(a._id === group._id){
                   group=a;
