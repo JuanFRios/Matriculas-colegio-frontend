@@ -9,8 +9,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-subject-form',
   templateUrl: './subject-form.component.html',
-  styles: [
-  ]
+  styleUrls: ['./degrees.component.css']
 })
 export class SubjectFormComponent implements OnInit {
 

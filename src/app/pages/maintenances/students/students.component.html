@@ -2,34 +2,29 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                
-                <input type="text"
-                        class="form-control"
-                        placeholder="Buscar estudiante"
-                        #txtTerm
-                        (keyup)="searchStudent(txtTerm.value)"/>
+
+                <input type="text" class="form-control" placeholder="Buscar estudiante" #txtTerm
+                    (keyup)="searchStudent(txtTerm.value)" />
 
             </div>
         </div>
     </div>
-</div> 
+</div>
 
-<div class="row animated fadeIn fast"
-    *ngIf="loading">
+<div class="row animated fadeIn fast" *ngIf="loading">
     <div class="col-12">
-        
+
         <div class="alert alert-info text-center">
-          <h4 class="alert-heading">Cargando</h4>
-          <i class="fa fa-spin fa-refresh fa-2x"></i>
-          <p class="mb-0">Por favor espere</p>
+            <h4 class="alert-heading">Cargando</h4>
+            <i class="fa fa-spin fa-refresh fa-2x"></i>
+            <p class="mb-0">Por favor espere</p>
         </div>
 
     </div>
-</div> 
+</div>
 
 
-<div class="row"
-    *ngIf="!loading">
+<div class="row" *ngIf="!loading">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
@@ -38,13 +33,12 @@
                         <h4 class="card-title">Estudiantes ({{totalStudents}})</h4>
                         <h6 class="card-subtitle">
                             Estudiantes registrados
-                            
+
                         </h6>
                     </div>
                     <div class="col">
                         <div class="text-right">
-                            <button class="btn btn-info"
-                                    (click)="launchStudentForm()">
+                            <button class="btn btn-info" (click)="launchStudentForm()">
                                 <i class="fa fa-id-card-o"></i>
                                 Agregar estudiante
                             </button>
@@ -80,108 +74,76 @@
                                     <td>{{student.guardianContactNumber}}</td>
                                     <td>{{student.lastApprovedGrade}}</td>
                                     <td class="text-nowrap text-center">
-                                        <a (click)="editStudent(student)"
-                                           data-toggle="tooltip"
-                                           class="cursor"
-                                           data-original-title="Editar">
-                                           <i class="fa fa-pencil text-inverse m-r-10"></i>
+                                        <a (click)="editStudent(student)" data-toggle="tooltip" class="cursor"
+                                            data-original-title="Editar">
+                                            <i class="fa fa-pencil text-inverse m-r-10"></i>
                                         </a>
-                                        <a (click)="deleteStudent(student)"
-                                           data-toggle="tooltip"
-                                           class="cursor"
-                                           data-original-title="Borrar">
-                                           <i class="fa fa-close text-danger"></i>                                           
+                                        <a (click)="deleteStudent(student)" data-toggle="tooltip" class="cursor"
+                                            data-original-title="Borrar">
+                                            <i class="fa fa-close text-danger"></i>
                                         </a>
-                                        <a (click)="gestionMatricula(student)" class="cursor" data-toggle="tooltip" data-original-title="Matricula">                                            
-                                            <mat-icon>description</mat-icon>
+                                        <a (click)="gestionMatricula(student)" data-toggle="tooltip" class="cursor" style="margin-left: 8px;"
+                                            data-original-title="Matricula">
+                                            <i class="fa fa-file-text text-inverse m-r-10"></i>
                                         </a>
 
                                     </td>
                                 </ng-container>
                                 <ng-template #elseTemplate>
                                     <td>
-                                        <input type="text"
-                                                class="form-control"
-                                                placeholder="Id"
-                                                [(ngModel)]="student.identityDocument"
-                                                />
+                                        <input type="text" class="form-control" placeholder="Id"
+                                            [(ngModel)]="student.identityDocument" />
                                     </td>
                                     <td>
-                                        <input type="text"
-                                                class="form-control"
-                                                placeholder="Nombre"
-                                                [(ngModel)]="student.fullName"
-                                                />
+                                        <input type="text" class="form-control" placeholder="Nombre"
+                                            [(ngModel)]="student.fullName" />
                                     </td>
                                     <td>
-                                        <input type="text"
-                                                class="form-control"
-                                                placeholder="Edad"
-                                                [(ngModel)]="student.age"
-                                                />
+                                        <input type="text" class="form-control" placeholder="Edad"
+                                            [(ngModel)]="student.age" />
                                     </td>
                                     <td>
-                                        <input type="text"
-                                                class="form-control"
-                                                placeholder="Dirección"
-                                                [(ngModel)]="student.address"
-                                                />
+                                        <input type="text" class="form-control" placeholder="Dirección"
+                                            [(ngModel)]="student.address" />
                                     </td>
                                     <td>
-                                        <input type="text"
-                                                class="form-control"
-                                                placeholder="Correo"
-                                                [(ngModel)]="student.email"
-                                                />
+                                        <input type="text" class="form-control" placeholder="Correo"
+                                            [(ngModel)]="student.email" />
                                     </td>
                                     <td>
-                                        <input type="text"
-                                                class="form-control"
-                                                placeholder="Teléfono"
-                                                [(ngModel)]="student.contactNumber"
-                                                />
+                                        <input type="text" class="form-control" placeholder="Teléfono"
+                                            [(ngModel)]="student.contactNumber" />
                                     </td>
                                     <td>
-                                        <input type="text"
-                                                class="form-control"
-                                                placeholder="Acudiente"
-                                                [(ngModel)]="student.guardianName"
-                                                />
+                                        <input type="text" class="form-control" placeholder="Acudiente"
+                                            [(ngModel)]="student.guardianName" />
                                     </td>
                                     <td>
-                                        <input type="text"
-                                                class="form-control"
-                                                placeholder="Tel acud"
-                                                [(ngModel)]="student.guardianContactNumber"
-                                                />
+                                        <input type="text" class="form-control" placeholder="Tel acud"
+                                            [(ngModel)]="student.guardianContactNumber" />
                                     </td>
                                     <td>
-                                        <input type="text"
-                                                disabled= true
-                                                class="form-control"
-                                                placeholder="Grado"
-                                                [(ngModel)]="student.lastApprovedGrade"
-                                                />
+                                        <input type="text" disabled=true class="form-control" placeholder="Grado"
+                                            [(ngModel)]="student.lastApprovedGrade" />
                                     </td>
                                     <td class="text-nowrap text-center">
-                                        <a (click)="updateStudent(student)"
-                                           data-toggle="tooltip"
-                                           class="cursor"
-                                           data-original-title="Editar">
-                                           <i class="fa fa-floppy-o text-inverse m-r-10"></i>
+                                        <a (click)="updateStudent(student)" data-toggle="tooltip" class="cursor"
+                                            data-original-title="Editar">
+                                            <i class="fa fa-floppy-o text-inverse m-r-10"></i>
                                         </a>
                                     </td>
                                 </ng-template>
-                                
+
                             </tr>
-                            
+
                         </tbody>
                     </table>
                 </div>
                 <div *ngIf="txtTerm.value.length === 0">
                     <button (click)="changePage(-5)" [disabled]="since==0" class="btn btn-secondary">Anterior</button>
                     &nbsp;
-                    <button (click)="changePage(5)" [disabled]="(totalStudents - since) <= 5" class="btn btn-secondary">Siguiente</button>
+                    <button (click)="changePage(5)" [disabled]="(totalStudents - since) <= 5"
+                        class="btn btn-secondary">Siguiente</button>
                 </div>
 
             </div>

@@ -7,9 +7,8 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-group-form',
-  templateUrl: './group-form.component.html',
-  styles: [
-  ]
+  templateUrl: './group-form.component.html',  
+  styleUrls: ['./degrees.component.css']
 })
 export class GroupFormComponent implements OnInit {
 

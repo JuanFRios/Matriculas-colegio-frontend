@@ -9,8 +9,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-student-form',
   templateUrl: './student-form.component.html',
-  styles: [
-  ]
+  styleUrls: ['./students.component.css']
 })
 export class StudentFormComponent implements OnInit {
   
@@ -21,7 +20,7 @@ export class StudentFormComponent implements OnInit {
               public dialogRef: MatDialogRef<StudentFormComponent>) { }
 
   ngOnInit(): void {
-    this.grados= ["Primero", "Segundo", "Tercero", "Cuarto", "Quinto", "Sexto", "Septimo", "Octavo", "Noveno", "Decimo", "Once"];
+    this.grados= ["Primero", "Segundo", "Tercero", "Cuarto", "Quinto", "Sexto", "Septimo", "Octavo", "Noveno", "Decimo"];
     this.studentForm = this.fb.group({
       identityDocument: ['', Validators.required],
       fullName: ['', Validators.required],
@@ -31,8 +30,7 @@ export class StudentFormComponent implements OnInit {
       contactNumber: ['', Validators.required],
       guardianName: ['', Validators.required],
       guardianContactNumber: ['', Validators.required],
-      lastApprovedGrade: ['', Validators.required],
-      password: ['', Validators.required]
+      lastApprovedGrade: ['', Validators.required]
     });
   }
 
