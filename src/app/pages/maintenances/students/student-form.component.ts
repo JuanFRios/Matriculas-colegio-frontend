@@ -9,8 +9,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-student-form',
   templateUrl: './student-form.component.html',
-  styles: [
-  ]
+  styleUrls: ['./students.component.css']
 })
 export class StudentFormComponent implements OnInit {
   

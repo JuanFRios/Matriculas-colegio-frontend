@@ -11,10 +11,15 @@ import { SidebarService } from '../../services/sidebar.service';
 export class SidebarComponent implements OnInit {
 
   menuItems: any[];
+  esEstudiante: boolean;
+  esAdmin: boolean;
   usuario;
   constructor( private sidebarService: SidebarService,
                 private adminService: AdminService ) {
     this.verificar();
+    let tipoUsuario= localStorage.getItem('tipoUsuario');
+    this.esEstudiante = (tipoUsuario === "Student")? true : false;
+    this.esAdmin = (tipoUsuario === "Admin")? true : false;
     this.usuario = JSON.parse(localStorage.getItem('user'));
     //this.menuItems = sidebarService.menu;
   }

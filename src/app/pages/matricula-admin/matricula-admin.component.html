@@ -37,12 +37,10 @@
         </div>
         <br>
         <div class="row">
-            <button (click)="onNoClick()" class="btn" style="background-color: gray; color: white;">
-                <i class="fa fa-times-circle"></i>
+            <button (click)="onNoClick()" class="button" style="background-color: gray;">                
                 Cancelar
             </button>
-            <button *ngIf="matriculaFormGroup.valid" type="button" (click)="enviarMatricula()" class="btn btn-success waves-effect waves-light">
-                <i class="fa fa-save"></i>
+            <button [disabled]="!matriculaFormGroup.valid" type="button" (click)="enviarMatricula()" class="button">               
                 Guardar
             </button>
         </div>
@@ -56,12 +54,10 @@
     <hr>
     <p>Actualmente {{data.student.fullName}} se encuentra matriculado en el grado {{data.degree.degree}} en la jornada
         de la {{data.group.dayShift}} y su profesor de grupo es {{data.group.mainTeacher}} </p>
-    <button (click)="onNoClick()" class="btn" style="background-color: gray; color: white;">
-        <i class="fa fa-save"></i>
+    <button (click)="onNoClick()" class="button" style="background-color: gray; ">        
         Cancelar
     </button>
-    <button type="button" (click)="eliminarMatricula()" class="btn btn-danger waves-effect waves-light">
-        <i class="fa fa-times-circle"></i>
+    <button type="button" (click)="eliminarMatricula()" class="button" style="background-color: red;">        
         Eliminar
     </button>
 </div>

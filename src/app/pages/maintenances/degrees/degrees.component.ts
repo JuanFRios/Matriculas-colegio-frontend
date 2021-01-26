@@ -99,7 +99,7 @@ export class DegreesComponent implements OnInit {
   }
 
   launchGroupForm() {
-    const dialogRef = this.dialog.open(GroupFormComponent, {width: '400px', data: this.degree._id});
+    const dialogRef = this.dialog.open(GroupFormComponent, {width: '500px', data: this.degree._id});
     dialogRef.afterClosed().subscribe(() => {
       this.loadingGroups = true;
       this.groupService.getGroupsPerDegree(this.degree._id)
@@ -138,7 +138,7 @@ export class DegreesComponent implements OnInit {
   }
 
   launchSubjectForm() {
-    const dialogRef = this.dialog.open(SubjectFormComponent, {width: '400px', data: this.degree});
+    const dialogRef = this.dialog.open(SubjectFormComponent, {width: '500px', data: this.degree});
     dialogRef.afterClosed().subscribe(() => {
       this.loadingSubjects = true;
       this.degreeService.getDegreePerName(this.degreeName)
